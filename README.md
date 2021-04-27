@@ -1,0 +1,2 @@
+# slr
+Regresión Linear Simple 
