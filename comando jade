@@ -1,1 +1,5 @@
+
+javac -cp lib/jade.jar src/examples/bookTrading/BookSellerGui.java  -d classes/
+
+
 java -cp lib/jade.jar:classes/ jade.Boot -gui Karla:bookTrading.slrAgent

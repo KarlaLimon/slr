@@ -1,34 +1,11 @@
-/*****************************************************************
-JADE - Java Agent DEvelopment Framework is a framework to develop 
-multi-agent systems in compliance with the FIPA specifications.
-Copyright (C) 2000 CSELT S.p.A. 
 
-GNU Lesser General Public License
-
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation, 
-version 2.1 of the License. 
-
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this library; if not, write to the
-Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-Boston, MA  02111-1307, USA.
-*****************************************************************/
-
-package bookTrading;
-
-import jade.core.AID;
+package SlrGui;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import slr.RegresionLineal;
+
+import Slr.RegresionLineal;
 
 class slrGui extends JFrame {	
 	private slrAgent myAgent;
@@ -47,9 +24,7 @@ class slrGui extends JFrame {
 		p.add(new JLabel("Agrega el valor a calcular:"));
 		xField = new JTextField(15);
 		p.add(xField);
-//		p.add(new JLabel("Price:"));
-//		priceField = new JTextField(15);
-//		p.add(priceField);
+
 		getContentPane().add(p, BorderLayout.CENTER);
 		
 		JButton addButton = new JButton("Calcular");
@@ -72,8 +47,7 @@ class slrGui extends JFrame {
 		p.add(addButton);
 		getContentPane().add(p, BorderLayout.SOUTH);
 		
-		// Make the agent terminate when the user closes 
-		// the GUI using the button on the upper right corner	
+
 		addWindowListener(new	WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				myAgent.doDelete();

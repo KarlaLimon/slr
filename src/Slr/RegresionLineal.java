@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package slr;
 
-/**
- *
- * @author morfeus
- */
+package Slr;
+
 public class RegresionLineal {
     
-    // Esta metodo retorna el producto de la variable dependiexte x independiente
+    // Este metodo retorna el producto de la variable dependiexte x independiente
     public static float SumatoriaProductoXY(float x[], float y[]){
         
         float arr[] = new float[x.length];
@@ -45,20 +37,20 @@ public class RegresionLineal {
     }
 
     // Calcula beta0
-    public static float CalculaBetaCero(float Exy, float Ex, float Ey, float Ex2, int total){
+    public static float CalculaBetaUno(float Exy, float Ex, float Ey, float Ex2, int total){
         
         float m = 0.0f, part1 = 0.0f, part2 = 0.0f;
         part1 = (total*(Exy) - (Ex*Ey));
-        part2 = (total*Ex2)- (float) Math.pow(Ex, 2);
+        part2 = (total*Ex2)- (float) (Ex*Ex);
         
         return m = part1 / part2;
     }
     
     // Calcula beta1
-    public static float CalculaBetaUno(float x, float y, float m, int total){
+    public static float CalculaBetaCero(float x, float y, float beta1, int total){
         
         float b = 0.0f;
-        b = (y/total) - (m*(x/total));
+        b = (y/total) - (beta1*(x/total));
         
         return b;
     }

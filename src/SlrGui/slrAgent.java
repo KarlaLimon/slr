@@ -1,19 +1,10 @@
 
-package bookTrading;
+package SlrGui;
 
 import jade.core.Agent;
 import jade.core.behaviours.*;
-import jade.lang.acl.ACLMessage;
-import jade.lang.acl.MessageTemplate;
-import slr.Helper;
-import slr.RegresionLineal;
-import jade.domain.DFService;
-import jade.domain.FIPAException;
-import jade.domain.FIPAAgentManagement.DFAgentDescription;
-import jade.domain.FIPAAgentManagement.ServiceDescription;
-
-import java.util.*;
-import java.io.IOException;
+import Slr.Helper;
+import Slr.RegresionLineal;
 
 public class slrAgent extends Agent {
 
@@ -21,22 +12,6 @@ public class slrAgent extends Agent {
 
 	// Put agent initializations here
 	protected void setup() {
-
-		// Register the book-selling service in the yellow pages
-		DFAgentDescription dfd = new DFAgentDescription();
-		dfd.setName(getAID());
-		ServiceDescription sd = new ServiceDescription();
-		sd.setType("slr");
-		sd.setName("slr oneshot");
-		dfd.addServices(sd);
-		try {
-			DFService.register(this, dfd);
-		}
-		catch (FIPAException fe) {
-			fe.printStackTrace();
-		}
-
-
 		// Add the behaviour serving purchase orders from buyer agents
 		addBehaviour(new slRegression());
 		
@@ -44,13 +19,7 @@ public class slrAgent extends Agent {
 
 	// Put agent clean-up operations here
 	protected void takeDown() {
-		// Deregister from the yellow pages
-		try {
-			DFService.deregister(this);
-		}
-		catch (FIPAException fe) {
-			fe.printStackTrace();
-		}
+		
 		// Close the GUI
 		myGui.dispose();
 		// Printout a dismissal message
@@ -71,11 +40,11 @@ public class slrAgent extends Agent {
 	        float sumatoriaY = RegresionLineal.SumatoriaArray(_y);
 	        float sumatoriaXcudrada = RegresionLineal.SumatoriaX(_x);
 	        
-	        float beta1 = RegresionLineal.CalculaBetaCero(sumatoriaXY,
+	        float beta1 = RegresionLineal.CalculaBetaUno(sumatoriaXY,
 	                        sumatoriaX, sumatoriaY, sumatoriaXcudrada, _x.length);
 	        
-	        float beta0 = RegresionLineal.CalculaBetaUno(
-	                sumatoriaX, sumatoriaY, beta1, _n);
+	        float beta0 = RegresionLineal.CalculaBetaCero(
+	                sumatoriaX, sumatoriaY, beta1,  _x.length);
 	        
 	        
 	        System.out.println("\nValor de beta 1: " 
