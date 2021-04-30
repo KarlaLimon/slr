@@ -12,7 +12,7 @@ public class slrAgent extends Agent {
 
 	// Put agent initializations here
 	protected void setup() {
-		// Add the behaviour serving purchase orders from buyer agents
+
 		addBehaviour(new slRegression());
 		
 	}
