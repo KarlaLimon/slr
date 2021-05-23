@@ -1,5 +1,5 @@
 
-package Slr;
+package SlrGui;
 
 public class RegresionLineal {
     
@@ -35,6 +35,9 @@ public class RegresionLineal {
         
         return _value;
     }
+    //no son funciones propias calculo de coeficientes. 
+    //otra clase de utildades instanciar, recursividad,
+    //pagar en espacio
 
     // Calcula beta0
     public static float CalculaBetaUno(float Exy, float Ex, float Ey, float Ex2, int total){
@@ -45,7 +48,7 @@ public class RegresionLineal {
         
         return m = part1 / part2;
     }
-    
+     //doubles
     // Calcula beta1
     public static float CalculaBetaCero(float x, float y, float beta1, int total){
         

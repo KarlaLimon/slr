@@ -5,8 +5,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import Slr.RegresionLineal;
-
 class slrGui extends JFrame {	
 	private slrAgent myAgent;
 	

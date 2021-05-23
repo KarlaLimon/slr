@@ -3,8 +3,6 @@ package SlrGui;
 
 import jade.core.Agent;
 import jade.core.behaviours.*;
-import Slr.Helper;
-import Slr.RegresionLineal;
 
 public class slrAgent extends Agent {
 
@@ -25,15 +23,15 @@ public class slrAgent extends Agent {
 		// Printout a dismissal message
 		System.out.println("Seller-agent "+getAID().getName()+" terminating.");
 	}
-
+//matar el agente 
 
 	private class slRegression extends OneShotBehaviour  {
 		public void action() {
 			
-	        float[] _y= {2.0f,3.0f,4.0f,4.0f,4.0f,6.0f,5.0f,7.0f};
-	        float[] _x= {1.0f,2.0f,2.0f,3.0f,4.0f,4.0f,5.0f,6.0f};
+	        float[] _y= {1.0f,2.0f,3.0f,4.0f,5.0f,6.0f,7.0f,8.0f,9.0f,10.0f};
+	        float[] _x= {2.0f,4.0f,6.0f,8.0f,10.0f,12.0f,14.0f,16.0f,18.0f,20.0f};
 	        
-	    
+//metodo action	    
 	        
 	        float sumatoriaXY = RegresionLineal.SumatoriaProductoXY(_x,_y);
 	        float sumatoriaX = RegresionLineal.SumatoriaArray(_x);

@@ -1,4 +1,4 @@
-package Slr;
+package SlrGui;
 
 public class Helper {
     
@@ -31,6 +31,6 @@ public class Helper {
         }catch (final Exception e){
             e.printStackTrace();  
         }  
-    }
+    }//clase de algebra lineal
 }
 
